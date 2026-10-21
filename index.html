@@ -210,5 +210,19 @@
             }
         }
     </script>
+    // Processamento da triagem de sintomas
+        function processarTriagemIA(sintoma) {
+            let sintomaNormalizado = sintoma.toLowerCase();
+            let respostaBot = "";
+
+            // Ticket #101: Protocolo de Emergência
+            if (sintomaNormalizado.includes("dor no peito") || sintomaNormalizado.includes("falta de ar")) {
+                respostaBot = "[EMERGÊNCIA #101] 🚨 Dirija-se imediatamente ao pronto-socorro mais próximo!";
+            } else {
+                respostaBot = "[TRIAGEM PADRÃO] Encaminhado para consulta geral. Valor: R$ 150,00";
+            }
+
+            return respostaBot;
+        }
 </body>
 </html>
